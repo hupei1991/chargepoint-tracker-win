@@ -1,0 +1,52 @@
+{
+  "name": "chargepoint-tracker-win",
+  "productName": "ChargePoint Tracker",
+  "version": "1.0.0",
+  "description": "Windows tray app that watches a ChargePoint EV charging station and notifies you when a port frees up",
+  "main": "src/main.js",
+  "author": "hupei1991",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/tracker.test.js",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "build": {
+    "appId": "io.github.hupei1991.cptracker",
+    "productName": "ChargePoint Tracker",
+    "files": [
+      "src/**",
+      "renderer/**",
+      "assets/**",
+      "package.json"
+    ],
+    "win": {
+      "icon": "assets/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "ChargePointTracker-${version}-portable.exe"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hupei1991/chargepoint-tracker-win.git"
+  },
+  "homepage": "https://github.com/hupei1991/chargepoint-tracker-win",
+  "keywords": [
+    "chargepoint",
+    "ev",
+    "charging",
+    "electron",
+    "tray",
+    "windows",
+    "notification"
+  ]
+}
